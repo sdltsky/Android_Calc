@@ -32,6 +32,14 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:id="@+id/symbol_divide"
+        android:text="/"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/num_3"
+        tools:ignore="MissingConstraints" />
+
+    <Button
         android:id="@+id/num_4"
         android:text="4"
         android:layout_width="wrap_content"
@@ -56,6 +64,16 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/num_5"
         app:layout_constraintTop_toBottomOf="@id/num_3"
+        />
+
+
+    <Button
+        android:id="@+id/symbol_multiply"
+        android:text="*"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/num_6"
+        app:layout_constraintTop_toBottomOf="@id/symbol_divide"
         />
 
     <Button
@@ -83,6 +101,51 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/num_8"
         app:layout_constraintTop_toBottomOf="@id/num_6"
+        />
+
+    <Button
+        android:id="@+id/symbol_minus"
+        android:text="-"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/num_9"
+        app:layout_constraintTop_toBottomOf="@id/symbol_multiply"
+        />
+
+    <Button
+        android:id="@+id/symbol_."
+        android:text="."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/num_7"
+        />
+
+    <Button
+        android:id="@+id/num_0"
+        android:text="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/symbol_."
+        app:layout_constraintTop_toBottomOf="@id/num_8"
+        />
+
+    <Button
+        android:id="@+id/symbol_equals"
+        android:text="="
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/num_0"
+        app:layout_constraintTop_toBottomOf="@id/num_9"
+        />
+
+    <Button
+        android:id="@+id/symbol_plus"
+        android:text="+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/symbol_equals"
+        app:layout_constraintTop_toBottomOf="@id/symbol_minus"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
