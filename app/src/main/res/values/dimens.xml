@@ -4,5 +4,5 @@
     <dimen name="margin_end_button">20dp</dimen>
     <dimen name="margin_start_textview">25dp</dimen>
     <dimen name="margin_end_textview">25dp</dimen>
-    <dimen name="size_text_textview">28sp</dimen>
+    <dimen name="size_text_result_textview">28sp</dimen>
 </resources>
