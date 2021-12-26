@@ -1,18 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/calc_image" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/digit_one_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_start_button"
+            android:text="1"
+            app:layout_constraintEnd_toStartOf="@id/digit_two_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/result_text_view" />
+
+        <Button
+            android:id="@+id/digit_two_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            app:layout_constraintEnd_toStartOf="@id/digit_three_button"
+            app:layout_constraintStart_toEndOf="@id/digit_one_button"
+            app:layout_constraintTop_toBottomOf="@id/result_text_view" />
+
+        <Button
+            android:id="@+id/digit_three_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            app:layout_constraintEnd_toStartOf="@id/division_operation_button"
+            app:layout_constraintStart_toEndOf="@id/digit_two_button"
+            app:layout_constraintTop_toBottomOf="@id/result_text_view" />
+
+        <Button
+            android:id="@+id/division_operation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_end_button"
+            android:text="/"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/digit_three_button"
+            app:layout_constraintTop_toBottomOf="@id/result_text_view" />
+
+        <Button
+            android:id="@+id/digit_four_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_start_button"
+            android:text="4"
+            app:layout_constraintEnd_toStartOf="@id/digit_five_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/digit_one_button" />
+
+        <Button
+            android:id="@+id/digit_five_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            app:layout_constraintEnd_toStartOf="@id/digit_six_button"
+            app:layout_constraintStart_toEndOf="@id/digit_four_button"
+            app:layout_constraintTop_toBottomOf="@id/digit_two_button" />
+
+        <Button
+            android:id="@+id/digit_six_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            app:layout_constraintEnd_toStartOf="@id/multiply_operation_button"
+            app:layout_constraintStart_toEndOf="@id/digit_five_button"
+            app:layout_constraintTop_toBottomOf="@id/digit_three_button" />
+
+        <Button
+            android:id="@+id/multiply_operation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_end_button"
+            android:text="*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/digit_six_button"
+            app:layout_constraintTop_toBottomOf="@id/division_operation_button" />
+
+
+        <Button
+            android:id="@+id/digit_seven_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_start_button"
+            android:text="7"
+            app:layout_constraintEnd_toStartOf="@id/digit_eight_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/digit_four_button" />
+
+        <Button
+            android:id="@+id/digit_eight_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            app:layout_constraintEnd_toStartOf="@id/digit_nine_button"
+            app:layout_constraintStart_toEndOf="@id/digit_seven_button"
+            app:layout_constraintTop_toBottomOf="@id/digit_five_button" />
+
+        <Button
+            android:id="@+id/digit_nine_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9"
+            app:layout_constraintEnd_toStartOf="@id/subtraction_operation_button"
+            app:layout_constraintStart_toEndOf="@id/digit_eight_button"
+            app:layout_constraintTop_toBottomOf="@id/digit_six_button" />
+
+        <Button
+            android:id="@+id/subtraction_operation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_end_button"
+            android:text="-"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/digit_nine_button"
+            app:layout_constraintTop_toBottomOf="@id/multiply_operation_button" />
+
+        <Button
+            android:id="@+id/decimal_point_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_start_button"
+            android:text="."
+            app:layout_constraintEnd_toStartOf="@id/digit_zero_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/digit_seven_button" />
+
+        <Button
+            android:id="@+id/digit_zero_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintEnd_toStartOf="@id/calculate_result_button"
+            app:layout_constraintStart_toEndOf="@id/decimal_point_button"
+            app:layout_constraintTop_toBottomOf="@id/digit_eight_button" />
+
+        <Button
+            android:id="@+id/calculate_result_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            app:layout_constraintEnd_toStartOf="@id/addition_operation_button"
+            app:layout_constraintStart_toEndOf="@id/digit_zero_button"
+            app:layout_constraintTop_toBottomOf="@id/digit_nine_button" />
+
+        <Button
+            android:id="@+id/addition_operation_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_end_button"
+            android:text="+"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/calculate_result_button"
+            app:layout_constraintTop_toBottomOf="@id/subtraction_operation_button" />
+
+        <TextView
+            android:id="@+id/result_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_start_textview"
+            android:layout_marginEnd="@dimen/margin_end_textview"
+            android:text="0"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_text_result_textview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
