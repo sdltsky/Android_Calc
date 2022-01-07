@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     Button symbolDecimalPoint;
     Button backspace;
     Button clearTextView;
+    Button openSecondActivity;
+    private double result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,102 +44,57 @@ public class MainActivity extends AppCompatActivity {
         resultTextView = findViewById(R.id.result_text_view);
 
         digitZero = findViewById(R.id.digit_zero_button);
-        digitZero.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "0");
-            }
-        });
+        digitZero.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "0"));
 
         digitOne = findViewById(R.id.digit_one_button);
-        digitOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "1");
-            }
-        });
+        digitOne.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "1"));
 
         digitTwo = findViewById(R.id.digit_two_button);
-        digitTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "2");
-            }
-        });
+        digitTwo.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "2"));
 
         digitThree = findViewById(R.id.digit_three_button);
-        digitThree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "3");
-            }
-        });
+        digitThree.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "3"));
 
         digitFour = findViewById(R.id.digit_four_button);
-        digitFour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "4");
-            }
-        });
+        digitFour.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "4"));
 
         digitFive = findViewById(R.id.digit_five_button);
-        digitFive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "5");
-            }
-        });
+        digitFive.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "5"));
 
         digitSix = findViewById(R.id.digit_six_button);
-        digitSix.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "6");
-            }
-        });
+        digitSix.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "6"));
 
         digitSeven = findViewById(R.id.digit_seven_button);
-        digitSeven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "7");
-            }
-        });
+        digitSeven.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "7"));
 
         digitEight = findViewById(R.id.digit_eight_button);
-        digitEight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "8");
-            }
-        });
+        digitEight.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "8"));
 
         digitNine = findViewById(R.id.digit_nine_button);
-        digitNine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + "9");
-            }
-        });
+        digitNine.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "9"));
 
         symbolDecimalPoint = findViewById(R.id.decimal_point_button);
-        symbolDecimalPoint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText(resultTextView.getText() + ".");
-            }
-        });
+        symbolDecimalPoint.setOnClickListener(view -> resultTextView.setText(resultTextView.getText() + "."));
 
         clearTextView = findViewById(R.id.clear_button);
-        clearTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resultTextView.setText("");
-            }
-        });
+        clearTextView.setOnClickListener(view -> resultTextView.setText(""));
 
+        openSecondActivity = findViewById(R.id.open_second_activity_button);
+        openSecondActivity.setOnClickListener(view -> openSecondActivity());
     }
 
-}
+    private void openSecondActivity() {
+        Intent intent = new Intent(this, SecondActivity.class);
+        convertTextViewValueToDouble();
+        intent.putExtra(RESULT_KEY, result);
+        startActivity(intent);
+    }
 
+    private void convertTextViewValueToDouble() {
+        try{
+            result = Double.parseDouble(resultTextView.getText()+"");
+        } catch (NumberFormatException e){
+            result = 0;
+        }
+    }
+}
