@@ -10,9 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SecondActivity extends AppCompatActivity {
 
-    public static final String RESULT_KEY = "result_key";
     TextView resultTextView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +18,9 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.second_activity);
 
         resultTextView = findViewById(R.id.second_activity_text_view);
+
+        CalculatedResult calculatedResult = getIntent().getParcelableExtra(MainActivity.RESULT_KEY);
+        resultTextView.setText("" + calculatedResult.getCalculatedResult());
 
     }
 

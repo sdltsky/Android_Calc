@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     Button backspace;
     Button clearTextView;
     Button openSecondActivity;
-    private double result;
+    private CalculatedResult calculatedResult = new CalculatedResult();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,15 +87,17 @@ public class MainActivity extends AppCompatActivity {
     private void openSecondActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
         convertTextViewValueToDouble();
-        intent.putExtra(RESULT_KEY, result);
+        intent.putExtra(RESULT_KEY, calculatedResult);
         startActivity(intent);
     }
 
     private void convertTextViewValueToDouble() {
         try{
-            result = Double.parseDouble(resultTextView.getText()+"");
-        } catch (NumberFormatException e){
-            result = 0;
+            String rawValue = resultTextView.getText().toString();
+            double value = Double.parseDouble(rawValue);
+            calculatedResult.setCalculatedResult(value);
+        } catch (Exception e){
+            Log.e("MainActivity", e.toString());
         }
     }
 }

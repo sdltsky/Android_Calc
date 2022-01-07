@@ -7,12 +7,12 @@ public class CalculatedResult implements Parcelable {
 
     private double calculatedResult;
 
-    public CalculatedResult(double calculatedResult) {
-        this.calculatedResult = calculatedResult;
+    public CalculatedResult() {
+        calculatedResult = 0.0;
     }
 
     private CalculatedResult(Parcel in) {
-        calculatedResult = in.readFloat();
+        calculatedResult = in.readDouble();
     }
 
     public double getCalculatedResult() {
