@@ -1,20 +1,19 @@
 package ru.gb.android_calc;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String RESULT_KEY = "result_key";
+    public static final String RECREATING_CONFIGURATION_KEY = "RECREATING_CONFIGURATION_KEY";
     TextView resultTextView;
     Button calculateResultButton;
     Button divisionOperationButton;
@@ -92,12 +91,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void convertTextViewValueToDouble() {
-        try{
+        try {
             String rawValue = resultTextView.getText().toString();
             double value = Double.parseDouble(rawValue);
             calculatedResult.setCalculatedResult(value);
-        } catch (Exception e){
+        } catch (Exception e) {
             Log.e("MainActivity", e.toString());
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        convertTextViewValueToDouble();
+        instanceState.putParcelable(RECREATING_CONFIGURATION_KEY, calculatedResult);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        calculatedResult = savedInstanceState.getParcelable(RECREATING_CONFIGURATION_KEY);
+        resultTextView.setText(String.valueOf(calculatedResult.getCalculatedResult()));
     }
 }
