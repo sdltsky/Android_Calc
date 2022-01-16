@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="for_digit_buttons">
+        <item name="android:backgroundTint">@color/digit_buttons</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="for_operation_buttons">
+        <item name="android:backgroundTint">@color/operation_buttons</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="for_clear_and_erase">
+        <item name="android:backgroundTint">@color/clear_and_erase</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="for_show_result">
+        <item name="android:backgroundTint">@color/show_result</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="for_result_text_view">
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/size_text_result_textview</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

@@ -19,114 +19,113 @@
 
         <TextView
             android:id="@+id/result_text_view"
+            style="@style/for_result_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_start_textview"
             android:layout_marginEnd="@dimen/margin_end_textview"
-            android:text=""
-            android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            android:textSize="@dimen/size_text_result_textview" />
+            android:text="" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/open_second_activity_button"
+            style="@style/for_show_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/show_result"
             android:backgroundTint="@color/show_result"
+            android:text="@string/show_result"
             app:layout_constraintStart_toStartOf="@id/digit_one_button"
             app:layout_constraintTop_toBottomOf="@id/result_text_view" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/clear_button"
+            style="@style/for_clear_and_erase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/clear"
-            android:backgroundTint="@color/clear_and_erase"
             app:layout_constraintEnd_toStartOf="@id/division_operation_button"
             app:layout_constraintStart_toEndOf="@id/digit_two_button"
             app:layout_constraintTop_toBottomOf="@id/result_text_view" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/backspace_operation_button"
+            style="@style/for_clear_and_erase"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_end_button"
             android:text="@string/erase"
-            android:backgroundTint="@color/clear_and_erase"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/digit_three_button"
             app:layout_constraintTop_toBottomOf="@id/result_text_view" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_one_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_start_button"
             android:text="@string/digit_one"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/digit_two_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/clear_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_two_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/digit_two"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/digit_three_button"
             app:layout_constraintStart_toEndOf="@id/digit_one_button"
             app:layout_constraintTop_toBottomOf="@id/clear_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_three_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/digit_three"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/division_operation_button"
             app:layout_constraintStart_toEndOf="@id/digit_two_button"
             app:layout_constraintTop_toBottomOf="@id/clear_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/division_operation_button"
+            style="@style/for_operation_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_end_button"
             android:text="@string/division_operation"
-            android:backgroundTint="@color/operation_buttons"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/digit_three_button"
             app:layout_constraintTop_toBottomOf="@id/backspace_operation_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_four_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_start_button"
             android:text="@string/digit_four"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/digit_five_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/digit_one_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_five_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/digit_five"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/digit_six_button"
             app:layout_constraintStart_toEndOf="@id/digit_four_button"
             app:layout_constraintTop_toBottomOf="@id/digit_two_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_six_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/digit_six"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/multiply_operation_button"
             app:layout_constraintStart_toEndOf="@id/digit_five_button"
             app:layout_constraintTop_toBottomOf="@id/digit_three_button" />
@@ -134,95 +133,95 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/multiply_operation_button"
+            style="@style/for_operation_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_end_button"
             android:text="@string/multiply_operation"
-            android:backgroundTint="@color/operation_buttons"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/digit_six_button"
             app:layout_constraintTop_toBottomOf="@id/division_operation_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_seven_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_start_button"
             android:text="@string/digit_seven"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/digit_eight_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/digit_four_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_eight_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/digit_eight"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/digit_nine_button"
             app:layout_constraintStart_toEndOf="@id/digit_seven_button"
             app:layout_constraintTop_toBottomOf="@id/digit_five_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_nine_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/digit_nine"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/subtraction_operation_button"
             app:layout_constraintStart_toEndOf="@id/digit_eight_button"
             app:layout_constraintTop_toBottomOf="@id/digit_six_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/subtraction_operation_button"
+            style="@style/for_operation_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_end_button"
             android:text="@string/subtraction_operation"
-            android:backgroundTint="@color/operation_buttons"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/digit_nine_button"
             app:layout_constraintTop_toBottomOf="@id/multiply_operation_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/decimal_point_button"
+            style="@style/for_operation_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_start_button"
             android:text="@string/decimal_point"
-            android:backgroundTint="@color/operation_buttons"
             app:layout_constraintEnd_toStartOf="@id/digit_zero_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/digit_seven_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/digit_zero_button"
+            style="@style/for_digit_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/digit_zero"
-            android:backgroundTint="@color/digit_buttons"
             app:layout_constraintEnd_toStartOf="@id/calculate_result_button"
             app:layout_constraintStart_toEndOf="@id/decimal_point_button"
             app:layout_constraintTop_toBottomOf="@id/digit_eight_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/calculate_result_button"
+            style="@style/for_operation_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/calculate_result"
-            android:backgroundTint="@color/operation_buttons"
             app:layout_constraintEnd_toStartOf="@id/addition_operation_button"
             app:layout_constraintStart_toEndOf="@id/digit_zero_button"
             app:layout_constraintTop_toBottomOf="@id/digit_nine_button" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addition_operation_button"
+            style="@style/for_operation_buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_end_button"
             android:text="@string/addition_operation"
-            android:backgroundTint="@color/operation_buttons"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/calculate_result_button"
             app:layout_constraintTop_toBottomOf="@id/subtraction_operation_button" />
